@@ -1,0 +1,80 @@
+/* Header.css */
+
+.header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Empurra os itens para os lados */
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo Estilo MacArt */
+.logo {
+  text-decoration: none;
+  font-family: 'serif'; /* Ou Playfair Display */
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo-highlight {
+  color: #A06841; /* Marrom da imagem */
+}
+
+/* Menu de Navegação */
+.nav-desktop {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #A06841;
+}
+
+/* Botão de Pedido */
+.order-button {
+  background-color: #A06841;
+  color: white !important;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  display: block;
+}
+
+/* Esconder o botão de menu no desktop */
+.mobile-menu-button {
+  display: none;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+  .nav-desktop, .header-right {
+    display: none;
+  }
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 4px;
+  }
+}

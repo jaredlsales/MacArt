@@ -1,14 +1,24 @@
-import { Button } from "@/components/ui/Button"
+import { Routes, Route, BrowserRouter } from "react-router-dom"
+import Layout from "./components/layout/Layout"
+import Aboult from "./pages/About"
+import Contact from "./pages/Contact"
+import Gallery from "./pages/Gallery"
+import Home from "./pages/Home"
+import Order from "./pages/Order"
+import Products from "./pages/Products"
 
 function App() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">MacArt - Funcionando! 🎉</h1>
-      <Button>Clique aqui</Button>
-      <p className="mt-4 text-gray-600">
-        Se você vê um botão e este texto, tudo está configurado!
-      </p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/produtos" element={<Layout><Products /></Layout>} />
+        <Route path="/sobre" element={<Layout><Aboult /></Layout>} />
+        <Route path="/galeria" element={<Layout><Gallery /></Layout>} />
+        <Route path="/contato" element={<Layout><Contact /></Layout>} />
+        <Route path="/pedido" element={<Layout><Order /></Layout>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
