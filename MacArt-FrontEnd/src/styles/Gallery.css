@@ -1,0 +1,87 @@
+/* ========================================
+   GALLERY - GALERIA DE IMAGENS
+   ======================================== */
+
+.gallery {
+  background-color: var(--color-background);
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.gallery-title {
+  margin-bottom: var(--spacing-md);
+}
+
+.gallery-description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-muted-foreground);
+}
+
+/*
+  Grid da galeria
+  Usamos grid-template-columns com repeat para criar colunas flexíveis
+*/
+.gallery-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Item da galeria */
+.gallery-item {
+  position: relative;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1; /* Quadrado */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay que aparece no hover */
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0; /* Atalho para top/right/bottom/left: 0 */
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-icon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+/* Responsividade */
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

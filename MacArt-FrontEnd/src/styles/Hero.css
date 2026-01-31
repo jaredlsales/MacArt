@@ -1,0 +1,143 @@
+/* ========================================
+   HERO - BANNER PRINCIPAL
+   ======================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh; /* 100% da altura da tela */
+  display: flex;
+  align-items: center;
+
+  /* Padding no topo para compensar o header fixo */
+  padding-top: 80px;
+}
+
+/* Imagem de fundo */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cobre toda a área sem distorcer */
+}
+
+/*
+  Overlay escuro sobre a imagem
+  Melhora a legibilidade do texto
+*/
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+/* Conteúdo do Hero */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  color: white;
+}
+
+/* Texto decorativo acima do título */
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.9;
+}
+
+/* Título principal */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-lg);
+  color: white;
+}
+
+/* Descrição */
+.hero-description {
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+/* Grupo de botões */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+/* Botão outline branco */
+.hero-btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.hero-btn-outline:hover {
+  background: white;
+  color: var(--color-foreground);
+}
+
+/* Indicador de scroll (setinha animada) */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: white;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: var(--font-size-5xl);
+  }
+
+  .hero-description {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: var(--font-size-6xl);
+  }
+}

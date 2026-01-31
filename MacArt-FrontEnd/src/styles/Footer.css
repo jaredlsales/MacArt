@@ -1,0 +1,122 @@
+/* ========================================
+   FOOTER - RODAPÉ
+   ======================================== */
+
+.footer {
+  background-color: var(--color-foreground);
+  color: white;
+  padding: var(--spacing-3xl) 0 var(--spacing-xl);
+}
+
+.footer-container {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+/* Logo e descrição */
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-description {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+/* Colunas de links */
+.footer-column h4 {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-md);
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer-link {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-primary-light);
+}
+
+/* Redes sociais */
+.footer-social {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.footer-social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  color: white;
+  transition: all var(--transition-fast);
+}
+
+.footer-social-link:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.footer-social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Linha divisória */
+.footer-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: var(--spacing-xl) 0;
+}
+
+/* Copyright */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .footer-container {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}

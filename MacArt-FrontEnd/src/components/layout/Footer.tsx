@@ -1,105 +1,105 @@
-import { Link } from "react-router-dom"
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react"
-import "./Footer.css"
+import '../../styles/Footer.css';
 
-const Footer = () => {
+function Footer() {
+  const currentYear = new Date().getFullYear();
 
-    const quickLinks = [
-        { name: 'Início', path: '/' },
-        { name: 'Produtos', path: '/produtos' },
-        { name: 'Sobre', path: '/sobre' },
-        { name: 'Galeria', path: '/galeria' },
-        { name: 'Contato', path: '/contato' },
-    ];
+  const quickLinks = [
+    { href: '#inicio', label: 'Início' },
+    { href: '#produtos', label: 'Produtos' },
+    { href: '#sobre', label: 'Sobre' },
+    { href: '#contato', label: 'Contato' },
+  ];
 
-    const products = [
-        { name: 'Toalhas Bordadas', path: '/produtos/toalhas-bordadas' },
-        { name: 'Enxoval de Bebê', path: '/produtos/enxoval-bebe' },
-        { name: 'Jogo de Cama', path: '/produtos/jogo-de-cama' },
-        { name: 'Toalhas de Mesa', path: '/produtos/toalhas-de-mesa' },
-        { name: 'Panos de Prato', path: '/produtos/panos-de-prato' },
-    ];
+  const products = [
+    { href: '/produto/toalhas-bordadas', label: 'Toalhas' },
+    { href: '/produto/enxoval-de-bebe', label: 'Enxoval' },
+    { href: '/produto/jogo-de-cama', label: 'Cama' },
+    { href: '/produto/roupoes-personalizados', label: 'Roupões' },
+  ];
 
-    return (
-        <footer className="footer">
-            <div className="footer-container">
-                {/* GRID COM 4 COLUNAS (no desktop) */}
-                <div className="footer-grid">
-                    {/* COLUNA 1: Marca */}
-                    <div className="footer-column">
-                        <div className="footer-logo">
-                            <div className="footer-logo-circle"></div>
-                            <span className="footer-logo-text">MacArt</span>
-                        </div>
-                        <p className="footer-description">
-                            Artesanato feito à mão com amor e dedicação.
-                            Cada peça é única e criada especialmente para você.
-                        </p>
-                        <div className="social-icons">
-                            <a href="#" className="social-icon">
-                                <Facebook size={20} />
-                            </a>
-                            <a href="#" className="social-icon">
-                                <Instagram size={20} />
-                            </a>
-                            <a href="#" className="social-icon">
-                                <Mail size={20} />
-                            </a>
-                        </div>
-                    </div>
+  return (
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-container">
+          {/* Coluna 1 - Marca */}
+          <div className="footer-brand">
+            <div className="footer-logo">MacArt</div>
+            <p className="footer-description">
+              Artesanato com amor, bordados que contam histórias.
+              Cada peça é única, feita especialmente para você.
+            </p>
 
-                    {/* COLUNA 2: Links rápidos */}
-                    <div className="footer-colums">
-                        <h3 className="footer-title">Links Rápidos</h3>
-                        <ul className="footer-links">
-                            {quickLinks.map((link) => (
-                                <li key={link.path}>
-                                    <Link to={link.path} className="footer-link">
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* COLUNA 3: Produtos */}
-                    <div className="footer-column">
-                        <h3 className="footer-title">Nossos Produtos</h3>
-                        <ul className="footer-links">
-                            {products.map((product) => (
-                                <li key={product.path}>
-                                    <Link to={product.path} className="footer-link">
-                                        {product.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* COLUNA 4: Contato */}
-                    <div className="footer-column">
-                        <h3 className="footer-title">Contato</h3>
-                        <div className="contact-info">
-                            <div className="contact-item">
-                                <Phone size={18} className="contact-icon" />
-                                <span>(00) 00000-0000</span>
-                            </div>
-                            <div className="contact-item">
-                                <Mail size={18} className="contact-icon" />
-                                <span>contato@macart.com</span>
-                            </div>
-                            <div className="contact-item">
-                                <MapPin size={18} className="contact-icon" />
-                                <span>Macatuba,São Paulo, Brasil</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            {/* Redes Sociais */}
+            <div className="footer-social">
+              <a href="#" className="footer-social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="18" cy="6" r="1"/>
+                </svg>
+              </a>
+              <a href="#" className="footer-social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                </svg>
+              </a>
+              <a href="#" className="footer-social-link" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+                </svg>
+              </a>
             </div>
-        </footer>
+          </div>
 
-    )
+          {/* Coluna 2 - Links Rápidos */}
+          <div className="footer-column">
+            <h4>Navegação</h4>
+            <nav className="footer-links">
+              {quickLinks.map((link) => (
+                <a key={link.href} href={link.href} className="footer-link">
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Coluna 3 - Produtos */}
+          <div className="footer-column">
+            <h4>Produtos</h4>
+            <nav className="footer-links">
+              {products.map((link) => (
+                <a key={link.href} href={link.href} className="footer-link">
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Coluna 4 - Contato */}
+          <div className="footer-column">
+            <h4>Contato</h4>
+            <nav className="footer-links">
+              <span className="footer-link">(11) 99999-9999</span>
+              <span className="footer-link">contato@macart.com.br</span>
+              <span className="footer-link">São Paulo, SP</span>
+            </nav>
+          </div>
+        </div>
+
+        <div className="footer-divider"></div>
+
+        {/* Copyright */}
+        <div className="footer-bottom">
+          <p className="footer-copyright">
+            © {currentYear} MacArt. Todos os direitos reservados.
+          </p>
+          <p className="footer-copyright">
+            Feito com ❤️ no Brasil
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

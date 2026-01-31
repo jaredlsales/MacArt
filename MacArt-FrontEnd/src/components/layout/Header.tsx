@@ -1,85 +1,117 @@
-import { Link, useLocation } from 'react-router-dom';
-import { Menu } from 'lucide-react';
-import { useState } from 'react';
-import "./Header.css"
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import '../../styles/Header.css';
 
-const Header = () => {
+// Lista de links de navegação
+// Definimos fora do componente porque não muda
+const navLinks = [
+  { href: '#inicio', label: 'Início' },
+  { href: '#produtos', label: 'Produtos' },
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#galeria', label: 'Galeria' },
+  { href: '#contato', label: 'Contato' },
+];
 
-    const location = useLocation();
+function Header() {
+  // Estado para controlar se o usuário rolou a página
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Estado para controlar se o menu mobile está aberto
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    // Array com itens do menu
-    const navItems = [
-        { name: "Início", path: "/" },
-        { name: "Produtos", path: "/produtos" },
-        { name: "Sobre", path: "/sobre" },
-        { name: "Galeria", path: "/galeria" },
-        { name: "Contato", path: "/contato" },
-    ];
+  /*
+    useEffect é um Hook que executa código quando algo acontece.
 
-    return (
-        <header className='header'>
-            <div className='header-container'>
-                {/* LOGO */}
-                <Link to="/" className='logo'>
-                    <span className='logo-text'>Mac<span className='logo-highlight'>Art</span></span>
-                </Link>
+    Sintaxe:
+    useEffect(() => {
+      // código a executar
+    }, [dependências]);
 
-                {/* MENU DESKTOP */}
-                <nav className='nav-desktop'>
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.path}
-                            to={item.path}
-                            className={`nav-link ${location.pathname === item.path ? "active" : ""}`}
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
-                </nav>
+    - Se dependências for [], executa só uma vez (ao montar)
+    - Se tiver variáveis, executa quando elas mudam
+  */
+  useEffect(() => {
+    // Função que verifica a posição do scroll
+    const handleScroll = () => {
+      // Se rolou mais de 50 pixels, marca como scrolled
+      setIsScrolled(window.scrollY > 50);
+    };
 
-                {/* BOTÃO LADO DIREITO */}
-                <div className='header-right'>
-                    <Link to="/pedido" className='order-button'>
-                        Fazer Pedido
-                    </Link>
-                </div>
+    // Adiciona o "ouvinte" de evento
+    window.addEventListener('scroll', handleScroll);
 
-                {/* BOTÃO MENU MOBILE */}
-                <button
-                    type="button"
-                    className='mobile-menu-button'
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    aria-label="Abrir menu"
+    // Cleanup: remove o ouvinte quando o componente é desmontado
+    // Isso evita memory leaks (vazamentos de memória)
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Array vazio = executa só uma vez
+
+  // Função para alternar o menu mobile
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Função para fechar o menu ao clicar em um link
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container header-container">
+        {/* Logo */}
+        <Link to="/" className="header-logo">
+          MacArt
+        </Link>
+
+        {/* Navegação Desktop */}
+        <nav className="header-nav">
+          <ul className="header-nav-list">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="header-nav-link">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Botão Menu Mobile */}
+        <button
+          className={`header-menu-button ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="Abrir menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      {/* Menu Mobile */}
+      <div className={`header-mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <nav>
+          <ul className="header-mobile-nav-list">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="header-mobile-nav-link"
+                  onClick={handleLinkClick}
                 >
-                    <Menu className='h-5 w-5' />
-                </button>
-            </div>
-
-            {/* Menu Mobile */}
-            {mobileMenuOpen && (
-                <div className='mobile-menu'>
-                    <div className='mobile-nav'>
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.path}
-                                to={item.path}
-                                className={`mobile-nav-link ${location.pathname === item.path ? 'active' : ''}`}
-                                onClick={() => setMobileMenuOpen(false)}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-        </header>
-    )
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
 }
 
-
-export default Header
+export default Header;
 
 

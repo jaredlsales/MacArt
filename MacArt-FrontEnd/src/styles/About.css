@@ -1,0 +1,103 @@
+/* ========================================
+   ABOUT - SEÇÃO SOBRE NÓS
+   ======================================== */
+
+.about {
+  background-color: var(--color-muted);
+}
+
+/*
+  Layout em duas colunas usando CSS Grid
+  A imagem fica à esquerda, o texto à direita
+*/
+.about-container {
+  display: grid;
+  gap: var(--spacing-3xl);
+  align-items: center;
+}
+
+/* Lado da imagem */
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image {
+  border-radius: var(--border-radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*
+  Elemento decorativo
+  Um retângulo colorido que fica "atrás" da imagem
+*/
+.about-decoration {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary-light);
+  border-radius: var(--border-radius-2xl);
+  z-index: -1;
+}
+
+/* Lado do texto */
+.about-content {
+  max-width: 500px;
+}
+
+.about-subtitle {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-title {
+  margin-bottom: var(--spacing-md);
+}
+
+.about-text {
+  color: var(--color-muted-foreground);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Lista de benefícios/diferenciais */
+.about-features {
+  margin-bottom: var(--spacing-xl);
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.about-feature-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.about-feature-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground);
+}
+
+/* Responsividade - 2 colunas em telas maiores */
+@media (min-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

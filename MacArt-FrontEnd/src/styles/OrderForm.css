@@ -1,0 +1,133 @@
+/* ========================================
+   ORDER FORM - FORMULÁRIO DE CONTATO
+   ======================================== */
+
+.order-form-section {
+  background-color: var(--color-muted);
+}
+
+.order-form-container {
+  display: grid;
+  gap: var(--spacing-3xl);
+}
+
+/* Lado esquerdo - Informações */
+.order-form-info {
+  max-width: 500px;
+}
+
+.order-form-subtitle {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.order-form-title {
+  margin-bottom: var(--spacing-md);
+}
+
+.order-form-description {
+  color: var(--color-muted-foreground);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Informações de contato */
+.order-form-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.order-form-contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.order-form-contact-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-light);
+  border-radius: var(--border-radius-lg);
+  color: var(--color-primary);
+}
+
+.order-form-contact-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.order-form-contact-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground);
+}
+
+/* Lado direito - Formulário */
+.order-form-card {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-2xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Grid para campos lado a lado */
+.order-form-row {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+/* Grupo de campo (label + input) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mensagem de sucesso */
+.order-form-success {
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+}
+
+.order-form-success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--spacing-md);
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.order-form-success-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.order-form-success-text {
+  color: var(--color-muted-foreground);
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .order-form-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .order-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

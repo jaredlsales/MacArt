@@ -1,0 +1,225 @@
+/* ========================================
+   PRODUCT TABS - ABAS DO PRODUTO
+   ======================================== */
+
+.product-tabs {
+  margin-top: var(--spacing-3xl);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-xl);
+}
+
+/* Lista de abas */
+.product-tabs-list {
+  display: flex;
+  gap: var(--spacing-xs);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-xl);
+  overflow-x: auto; /* Scroll horizontal em telas pequenas */
+}
+
+/* Botão de cada aba */
+.product-tab-button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap; /* Não quebra linha */
+}
+
+.product-tab-button:hover {
+  color: var(--color-foreground);
+}
+
+.product-tab-button.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Conteúdo das abas */
+.product-tab-content {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Aba de descrição */
+.product-description {
+  max-width: 700px;
+}
+
+.product-description p {
+  color: var(--color-muted-foreground);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+}
+
+/* Aba de informações */
+.product-info-table {
+  width: 100%;
+  max-width: 500px;
+  border-collapse: collapse;
+}
+
+.product-info-table tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.product-info-table th,
+.product-info-table td {
+  padding: var(--spacing-md);
+  text-align: left;
+}
+
+.product-info-table th {
+  font-weight: 500;
+  color: var(--color-foreground);
+  width: 40%;
+}
+
+.product-info-table td {
+  color: var(--color-muted-foreground);
+}
+
+/* Aba de avaliações */
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.reviews-average {
+  font-size: var(--font-size-4xl);
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.reviews-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviews-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted-foreground);
+}
+
+/* Lista de avaliações */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.review-item {
+  padding: var(--spacing-lg);
+  background-color: var(--color-muted);
+  border-radius: var(--border-radius-xl);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+}
+
+.review-author {
+  font-weight: 500;
+  color: var(--color-foreground);
+}
+
+.review-date {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted-foreground);
+}
+
+.review-rating {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.review-comment {
+  color: var(--color-muted-foreground);
+  line-height: 1.6;
+}
+
+/* Estrela */
+.star {
+  width: 16px;
+  height: 16px;
+}
+
+.star.filled {
+  color: var(--color-gold);
+  fill: var(--color-gold);
+}
+
+.star.empty {
+  color: var(--color-border);
+  fill: none;
+}
+
+/* Formulário de avaliação */
+.review-form {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background-color: var(--color-muted);
+  border-radius: var(--border-radius-xl);
+}
+
+.review-form-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.review-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.rating-input {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.rating-input-label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.rating-stars {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.rating-star-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.rating-star-button svg {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-fast);
+}
+
+.rating-star-button:hover svg {
+  transform: scale(1.2);
+}

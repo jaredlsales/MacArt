@@ -1,0 +1,162 @@
+/* ========================================
+   CATEGORIES - SEÇÃO DE CATEGORIAS
+   ======================================== */
+
+.categories {
+  background-color: var(--color-background);
+}
+
+/* Cabeçalho da seção */
+.categories-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.categories-title {
+  margin-bottom: var(--spacing-md);
+}
+
+.categories-description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-muted-foreground);
+}
+
+/*
+  Grid de cards
+
+  CSS Grid é perfeito para layouts em grade.
+  Aqui usamos uma técnica responsiva com repeat() e auto-fit.
+*/
+.categories-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+
+  /*
+    grid-template-columns define as colunas
+    repeat(auto-fit, minmax(300px, 1fr)) significa:
+    - auto-fit: cria quantas colunas couberem
+    - minmax(300px, 1fr): cada coluna tem no mínimo 300px
+      e no máximo 1 fração do espaço disponível
+  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Card de categoria */
+.category-card {
+  position: relative;
+  border-radius: var(--border-radius-2xl);
+  overflow: hidden;
+  cursor: pointer;
+
+  /*
+    aspect-ratio define a proporção do elemento
+    4/5 significa que a altura será 5/4 da largura
+  */
+  aspect-ratio: 4 / 5;
+}
+
+/* Imagem do card */
+.category-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.category-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+/* Zoom na imagem ao passar o mouse */
+.category-card:hover .category-card-image img {
+  transform: scale(1.05);
+}
+
+/*
+  Overlay com gradiente
+  Escurece a parte de baixo para o texto ficar legível
+*/
+.category-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+/* Conteúdo do card */
+.category-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-xl);
+  color: white;
+
+  /* Animação de entrada */
+  transform: translateY(20px);
+  transition: transform var(--transition-normal);
+}
+
+.category-card:hover .category-card-content {
+  transform: translateY(0);
+}
+
+.category-card-title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-sm);
+  color: white;
+}
+
+.category-card-description {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-md);
+
+  /*
+    line-clamp limita o número de linhas
+    Útil para manter cards com altura consistente
+  */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Botão dentro do card */
+.category-card-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: white;
+  color: var(--color-foreground);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition-normal);
+}
+
+.category-card:hover .category-card-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.category-card-button:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
