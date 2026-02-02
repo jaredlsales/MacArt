@@ -18,18 +18,16 @@ function Hero({ heroImage }: HeroProps) {
       {/* Conteúdo */}
       <div className="container">
         <div className="hero-content animate-fade-up">
-          <span className="hero-subtitle">Bordados Artesanais</span>
+          <span className="hero-subtitle">Artesanato Exclusivo & Personalizado</span>
 
           <h1 className="hero-title">
-            Arte que Aquece
+            Arte Feita à Mão, Feita para
             <br />
-            Seu Lar
+            Você
           </h1>
 
           <p className="hero-description">
-            Cada peça é única, bordada à mão com carinho e dedicação.
-            Descubra toalhas, enxovais e muito mais para tornar sua
-            casa ainda mais especial.
+            Peças feitas à mão que transformam seus sonhos em arte. Toalhas bordadas, enxovais e lembranças únicas criadas especialmente para você.
           </p>
 
           <div className="hero-buttons">
@@ -40,6 +38,10 @@ function Hero({ heroImage }: HeroProps) {
               Fazer Encomenda
             </a>
           </div>
+
+          <button >
+
+          </button>
         </div>
       </div>
 
@@ -47,7 +49,7 @@ function Hero({ heroImage }: HeroProps) {
       <div className="hero-scroll-indicator">
         <span>Role para ver mais</span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 5v14M19 12l-7 7-7-7"/>
+          <path d="M12 5v14M19 12l-7 7-7-7" />
         </svg>
       </div>
     </section>

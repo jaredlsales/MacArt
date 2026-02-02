@@ -7,7 +7,7 @@ import OrderForm from '../components/layout/OrderForm';
 import Footer from '../components/layout/Footer';
 
 // Importando imagens
-import heroImage from '../assets/hero-macart.jpg';
+import heroImage from '../assets/hero-macart.jpeg';
 import aboutImage from '../assets/about-artisan.jpg';
 import categoryTowels from '../assets/category-towels.jpg';
 import categoryBaby from '../assets/category-baby.jpg';
