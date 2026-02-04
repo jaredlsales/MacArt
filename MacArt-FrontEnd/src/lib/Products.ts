@@ -16,6 +16,7 @@ export interface Product {
   longDescription: string;
   price: number;      // Em centavos (ex: 8990 = R$ 89,90)
   image: string;      // Nome da imagem
+  images?: string[];  // Galeria de imagens do produto
   category: string;
   sizes: string[];
   tags: string[];
@@ -36,6 +37,7 @@ export const products: Product[] = [
     O processo de bordado é feito com cuidado artesanal, resultando em produtos exclusivos que unem delicadeza e utilidade.`,
     price: 12000,
     image: "category-towels",
+    images: ["category-towels", "gallery-1", "gallery-2"],
     category: "Bebê",
     sizes: ["Pequena (70x70cm)", "Média (80x80cm)", "Grande (100x100cm)"],
     tags: ["bordado", "personalizado", "bebê", "fralda", "presente"],
@@ -78,6 +80,7 @@ export const products: Product[] = [
     Um presente único e emocionante para acompanhar o crescimento do bebê e criar memórias inesquecíveis.`,
     price: 9800,
     image: "category-baby",
+    images: ["category-baby", "gallery-3", "gallery-4"],
     category: "Decoração",
     sizes: ["27x25cm"],
     tags: ["bebê", "recordações", "memórias", "presente", "personalizado"],
@@ -112,6 +115,7 @@ export const products: Product[] = [
     além de serem um presente encantador e cheio de carinho.`,
     price: 3800,
     image: "category-table",
+    images: ["category-table", "gallery-5", "gallery-6"],
     category: "Bebê",
     sizes: ["32x47cm"],
     tags: ["bebê", "toalha de boca", "bordado", "personalizado", "presente"],
@@ -139,6 +143,7 @@ export const products: Product[] = [
     trazendo exclusividade e charme para sua mesa.`,
     price: 3200,
     image: "category-bedding",
+    images: ["category-bedding", "gallery-7", "gallery-8"],
     category: "Cozinha",
     sizes: ["44x74cm"],
     tags: ["cozinha", "guardanapo", "bordado", "personalizado", "mesa posta"],
@@ -172,6 +177,7 @@ export const products: Product[] = [
     frutas, flores, animais, frases inspiradoras e muito mais.`,
     price: 3990,
     image: "category-kitchen",
+    images: ["category-kitchen", "gallery-1", "gallery-3"],
     category: "Cozinha",
     sizes: ["Unitário", "Kit 3 peças", "Kit 6 peças", "Kit 12 peças"],
     tags: ["cozinha", "decoração", "bordado", "pano"],
@@ -199,6 +205,7 @@ export const products: Product[] = [
     aniversários, Dia das Mães ou simplesmente para demonstrar carinho.`,
     price: 18990,
     image: "category-robes",
+    images: ["category-robes", "gallery-2", "gallery-4"],
     category: "Banho",
     sizes: ["P", "M", "G", "GG"],
     tags: ["roupão", "banho", "presente", "personalizado"],

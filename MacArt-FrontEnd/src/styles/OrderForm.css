@@ -9,6 +9,8 @@
 .order-form-container {
   display: grid;
   gap: var(--spacing-3xl);
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* Lado esquerdo - Informações */
@@ -71,7 +73,7 @@
 .order-form-card {
   background-color: var(--color-background);
   border-radius: var(--border-radius-2xl);
-  padding: var(--spacing-xl);
+  padding: var(--spacing-lg);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-border);
 }
@@ -202,5 +204,11 @@ select.input {
 
   .order-form-row {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .order-form-container {
+    max-width: 1000px;
   }
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
@@ -13,6 +13,14 @@ import categoryTable from '../assets/category-table.jpg';
 import categoryBedding from '../assets/category-bedding.jpg';
 import categoryKitchen from '../assets/category-kitchen.jpg';
 import categoryRobes from '../assets/category-robes.jpg';
+import gallery1 from '../assets/gallery-1.jpg.jpg';
+import gallery2 from '../assets/gallery-2.jpg.jpg';
+import gallery3 from '../assets/gallery-3.jpg.jpg';
+import gallery4 from '../assets/gallery-4.jpg.jpg';
+import gallery5 from '../assets/gallery-5.jpg.jpg';
+import gallery6 from '../assets/gallery-6.jpg.jpg';
+import gallery7 from '../assets/gallery-7.jpg.jpg';
+import gallery8 from '../assets/gallery-8.jpg.jpg';
 
 // Mapa de imagens
 const imageMap: Record<string, string> = {
@@ -22,6 +30,14 @@ const imageMap: Record<string, string> = {
     "category-bedding": categoryBedding,
     "category-kitchen": categoryKitchen,
     "category-robes": categoryRobes,
+    "gallery-1": gallery1,
+    "gallery-2": gallery2,
+    "gallery-3": gallery3,
+    "gallery-4": gallery4,
+    "gallery-5": gallery5,
+    "gallery-6": gallery6,
+    "gallery-7": gallery7,
+    "gallery-8": gallery8,
 };
 
 function ProductDetail() {
@@ -37,6 +53,7 @@ function ProductDetail() {
     // Estados
     const [quantity, setQuantity] = useState(1);
     const [selectedSize, setSelectedSize] = useState('');
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
 
     // Busca o produto pelo slug
     const product = slug ? getProductBySlug(slug) : undefined;
@@ -60,9 +77,29 @@ function ProductDetail() {
         );
     }
 
+    const productImages = useMemo(() => {
+        const keys = product.images && product.images.length > 0
+            ? product.images
+            : [product.image];
+
+        return keys.map((key) => imageMap[key] || categoryTowels);
+    }, [product.image, product.images]);
+
+    useEffect(() => {
+        setActiveImageIndex(0);
+    }, [product.slug]);
+
     // Pega a imagem do produto
-    const productImage = imageMap[product.image] || categoryTowels;
+    const productImage = productImages[activeImageIndex] || categoryTowels;
     const averageRating = getAverageRating(product.reviews);
+
+    const handlePrevImage = () => {
+        setActiveImageIndex((prev) => (prev === 0 ? productImages.length - 1 : prev - 1));
+    };
+
+    const handleNextImage = () => {
+        setActiveImageIndex((prev) => (prev === productImages.length - 1 ? 0 : prev + 1));
+    };
 
     // Funções para controlar a quantidade
     const increaseQuantity = () => setQuantity(prev => prev + 1);
@@ -99,9 +136,48 @@ function ProductDetail() {
 
                 {/* Grid do produto */}
                 <div className="product-grid">
-                    {/* Imagem */}
-                    <div className="product-image-wrapper">
-                        <img src={productImage} alt={product.title} />
+                    <div className="product-media">
+                        {/* Imagem */}
+                        <div className="product-image-wrapper">
+                            <img src={productImage} alt={product.title} />
+
+                            {productImages.length > 1 && (
+                                <div className="product-image-controls">
+                                    <button
+                                        type="button"
+                                        className="product-image-control"
+                                        onClick={handlePrevImage}
+                                        aria-label="Imagem anterior"
+                                    >
+                                        ‹
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="product-image-control"
+                                        onClick={handleNextImage}
+                                        aria-label="Próxima imagem"
+                                    >
+                                        ›
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+
+                        {productImages.length > 1 && (
+                            <div className="product-image-thumbs">
+                                {productImages.map((image, index) => (
+                                    <button
+                                        key={`${product.slug}-${index}`}
+                                        type="button"
+                                        className={`product-image-thumb ${index === activeImageIndex ? 'active' : ''}`}
+                                        onClick={() => setActiveImageIndex(index)}
+                                        aria-label={`Selecionar imagem ${index + 1}`}
+                                    >
+                                        <img src={image} alt={`Miniatura ${index + 1}`} />
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
 
                     {/* Informações */}
