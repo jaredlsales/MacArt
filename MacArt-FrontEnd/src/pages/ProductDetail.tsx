@@ -70,7 +70,7 @@ function ProductDetail() {
 
     // Gera o link do WhatsApp
     const generateWhatsAppLink = () => {
-        const phoneNumber = '5511999999999'; // Substituir pelo número real
+        const phoneNumber = '5514997301489'; // Substituir pelo número real
         const message = encodeURIComponent(
             `Olá! Gostaria de comprar:\n\n` +
             `*${product.title}*\n` +
@@ -166,8 +166,9 @@ function ProductDetail() {
                             </div>
                         </div>
 
-                        {/* Botões de ação */}
+                        {/* Botões de ação - Esta comentado pq nao esta sendo utilizado no momento */}
                         <div className="product-actions">
+                            {/*
                             <button className="btn btn-primary">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
@@ -176,6 +177,7 @@ function ProductDetail() {
                                 </svg>
                                 Comprar Agora
                             </button>
+                            */}
 
                             <a
                                 href={generateWhatsAppLink()}

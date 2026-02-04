@@ -79,9 +79,9 @@ function Footer() {
           <div className="footer-column">
             <h4>Contato</h4>
             <nav className="footer-links">
-              <span className="footer-link">(11) 99999-9999</span>
+              <span className="footer-link">(14) 99730-1489</span>
               <span className="footer-link">contato@macart.com.br</span>
-              <span className="footer-link">São Paulo, SP</span>
+              <span className="footer-link">Macatuba,SP</span>
             </nav>
           </div>
         </div>

@@ -1,4 +1,3 @@
-import { Heart, Award, Users, Scissors } from "lucide-react";
 import '../../styles/About.css';
 
 interface AboutProps {
@@ -34,15 +33,14 @@ function About({ aboutImage }: AboutProps) {
           </h2>
 
           <p className="text-body about-text">
-            Há mais de 15 anos, a MacArt transforma tecidos em obras de arte.
-            Cada peça que sai das nossas mãos carrega não apenas pontos
-            e linhas, mas também amor, dedicação e a tradição do artesanato
-            brasileiro.
+            Há mais de 15 anos, a MacArt transforma tecidos em verdadeiras obras de arte.
+            Cada criação que nasce em nossas mãos carrega não apenas pontos e linhas, mas também histórias de amor, dedicação e a rica tradição do artesanato brasileiro.
           </p>
 
           <p className="text-body about-text">
-            Nosso trabalho é feito sob encomenda, garantindo que cada cliente
-            receba uma peça única, pensada especialmente para ele.
+            Trabalhamos sob encomenda, garantindo que cada cliente receba uma peça exclusiva,
+            feita com cuidado e pensada nos mínimos detalhes para refletir sua essência.
+            Mais do que produtos, entregamos memórias bordadas com carinho e autenticidade.
           </p>
 
           {/* Lista de diferenciais */}
