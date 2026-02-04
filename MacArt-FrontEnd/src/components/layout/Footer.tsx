@@ -93,9 +93,6 @@ function Footer() {
           <p className="footer-copyright">
             © {currentYear} MacArt. Todos os direitos reservados.
           </p>
-          <p className="footer-copyright">
-            Feito com ❤️ no Brasil
-          </p>
         </div>
       </div>
     </footer>

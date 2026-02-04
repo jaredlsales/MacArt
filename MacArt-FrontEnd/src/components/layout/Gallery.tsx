@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import '../../styles/Gallery.css';
 
 interface GalleryProps {
@@ -5,6 +6,20 @@ interface GalleryProps {
 }
 
 function Gallery({ images }: GalleryProps) {
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (activeImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [activeImage]);
+
   return (
     <section id="galeria" className="gallery section-padding">
       <div className="container">
@@ -23,10 +38,13 @@ function Gallery({ images }: GalleryProps) {
         {/* Grid de imagens */}
         <div className="gallery-grid">
           {images.map((image, index) => (
-            <div
+            <button
               key={index}
+              type="button"
               className="gallery-item animate-scale-in"
               style={{ animationDelay: `${index * 0.05}s` }}
+              onClick={() => setActiveImage(image)}
+              aria-label={`Abrir imagem ${index + 1}`}
             >
               <img src={image} alt={`Trabalho ${index + 1}`} />
 
@@ -43,10 +61,29 @@ function Gallery({ images }: GalleryProps) {
                   <path d="M21 21l-4.35-4.35" />
                 </svg>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {activeImage && (
+        <div className="gallery-lightbox" onClick={() => setActiveImage(null)}>
+          <button
+            type="button"
+            className="gallery-lightbox-close"
+            onClick={() => setActiveImage(null)}
+            aria-label="Fechar imagem"
+          >
+            ×
+          </button>
+          <img
+            className="gallery-lightbox-image"
+            src={activeImage}
+            alt="Imagem ampliada"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 }

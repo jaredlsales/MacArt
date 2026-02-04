@@ -38,6 +38,10 @@
   overflow: hidden;
   cursor: pointer;
   aspect-ratio: 1; /* Quadrado */
+  border: none;
+  background: none;
+  padding: 0;
+  text-align: left;
 }
 
 .gallery-item img {
@@ -71,6 +75,51 @@
   width: 40px;
   height: 40px;
   color: white;
+}
+
+/* Lightbox */
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-lg);
+}
+
+.gallery-lightbox-image {
+  max-width: min(100%, 1100px);
+  max-height: 85vh;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-xl);
+  object-fit: contain;
+  background-color: #000;
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.gallery-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
 /* Responsividade */
