@@ -80,8 +80,8 @@ function Footer() {
             <h4>Contato</h4>
             <nav className="footer-links">
               <span className="footer-link">(14) 99730-1489</span>
-              <span className="footer-link">contato@macart.com.br</span>
-              <span className="footer-link">Macatuba,SP</span>
+              <span className="footer-link">ester.las7@gmail.com</span>
+              <span className="footer-link">Macatuba, SP</span>
             </nav>
           </div>
         </div>

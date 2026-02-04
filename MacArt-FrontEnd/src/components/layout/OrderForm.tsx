@@ -98,7 +98,7 @@ function OrderForm() {
           <polyline points="22,6 12,13 2,6" />
         </svg>
       ),
-      text: 'contato@macart.com.br',
+      text: 'ester.las7@gmail.com',
     },
     {
       icon: (
@@ -189,7 +189,7 @@ function OrderForm() {
                     id="email"
                     name="email"
                     className="input"
-                    placeholder="seu@email.com"
+                    placeholder="ester.las7@gmail.com"
                     value={formData.email}
                     onChange={handleChange}
                     required
