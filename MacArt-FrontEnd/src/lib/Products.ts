@@ -27,20 +27,18 @@ export interface Product {
 export const products: Product[] = [
   {
     id: 1,
-    slug: "toalhas-bordadas",
-    title: "Toalhas Bordadas",
-    description: "Toalhas de banho e rosto com bordados personalizados, monogramas e desenhos exclusivos.",
-    longDescription: `Nossas toalhas bordadas são confeccionadas com algodão 100% de alta qualidade,
-    garantindo maciez e durabilidade. Cada peça passa por um processo cuidadoso de bordado à mão,
-    onde nossos artesãos dedicam horas de trabalho para criar desenhos únicos e personalizados.
-
-    Ideal para presentear em casamentos, aniversários, chás de bebê ou para renovar seu banheiro
-    com peças exclusivas que carregam carinho e personalidade.`,
-    price: 8990,
+    slug: "fraldas-bordadas",
+    title: "Fraldas Bordadas",
+    description: "Fraldas bordadas são mantas para bebês, com personalização exclusiva do nome da criança.",
+    longDescription: `Nossas fraldas bordadas são confeccionadas com algodão 100% de alta qualidade,
+    garantindo maciez, conforto e durabilidade para o dia a dia do bebê. Além de funcionarem como mantas práticas,
+    cada peça pode ser personalizada com o nome da criança, tornando-se única e especial.
+    O processo de bordado é feito com cuidado artesanal, resultando em produtos exclusivos que unem delicadeza e utilidade.`,
+    price: 12000,
     image: "category-towels",
-    category: "Banho",
-    sizes: ["Rosto (50x80cm)", "Banho (70x140cm)", "Gigante (90x160cm)"],
-    tags: ["bordado", "personalizado", "banho", "presente"],
+    category: "Bebê",
+    sizes: ["Pequena (70x70cm)", "Média (80x80cm)", "Grande (100x100cm)"],
+    tags: ["bordado", "personalizado", "bebê", "fralda", "presente"],
     sku: "TOA-001",
     reviews: [
       {
@@ -48,14 +46,14 @@ export const products: Product[] = [
         author: "Maria Silva",
         rating: 5,
         date: "2024-01-15",
-        comment: "Amei as toalhas! O bordado ficou perfeito e a qualidade é excelente. Super recomendo!",
+        comment: "Amei as fraldas! O bordado ficou perfeito e a qualidade é excelente. Super recomendo!",
       },
       {
         id: 2,
         author: "Ana Paula",
         rating: 5,
         date: "2024-01-10",
-        comment: "Presente de casamento que foi um sucesso! Todos adoraram.",
+        comment: "Presente de chá de bebê foi um sucesso! Todos adoraram.",
       },
       {
         id: 3,
@@ -68,95 +66,97 @@ export const products: Product[] = [
   },
   {
     id: 2,
-    slug: "enxoval-de-bebe",
-    title: "Enxoval de Bebê",
-    description: "Conjuntos delicados para os pequenos: fraldas, mantas, babadores e roupinhas bordadas.",
-    longDescription: `Prepare a chegada do seu bebê com peças únicas e cheias de amor. Nosso enxoval
-    inclui fraldas de boca, mantas, babadores, toalhas com capuz e muito mais, tudo bordado à mão
-    com os mais delicados detalhes.
+    slug: "livro-recordações",
+    title: "Livro Minhas recordações",
+    description: "Livro personalizado para guardar todas as recordações dos primeiros momentos do bebê.",
+    longDescription: `Registre cada etapa especial da vida do seu bebê em um livro feito para eternizar memórias.
+    Desde o nascimento até os primeiros passos, você pode anotar datas importantes, colar fotos,
+    guardar lembranças e personalizar com o nome da criança.
 
-    Usamos apenas tecidos hipoalergênicos e de altíssima qualidade, pensando no conforto e
-    segurança dos pequenos. Personalize com o nome do bebê, animais fofos ou temas especiais.`,
-    price: 15990,
+    Nosso livro de recordações é confeccionado com materiais de alta qualidade e acabamento delicado,
+    pensado para durar muitos anos e preservar com carinho cada detalhe da infância. 
+    Um presente único e emocionante para acompanhar o crescimento do bebê e criar memórias inesquecíveis.`,
+    price: 9800,
     image: "category-baby",
-    category: "Bebê",
-    sizes: ["Kit Básico (5 peças)", "Kit Completo (10 peças)", "Kit Premium (15 peças)"],
-    tags: ["bebê", "enxoval", "presente", "bordado"],
-    sku: "BEB-001",
+    category: "Decoração",
+    sizes: ["27x25cm"],
+    tags: ["bebê", "recordações", "memórias", "presente", "personalizado"],
+    sku: "DEC-001",
     reviews: [
       {
         id: 1,
         author: "Fernanda Costa",
         rating: 5,
         date: "2024-01-20",
-        comment: "O enxoval mais lindo que já vi! Minha filha vai ficar uma princesa!",
+        comment: "Um livro maravilhoso para guardar cada lembrança da minha filha!",
       },
       {
         id: 2,
         author: "Juliana Almeida",
         rating: 5,
         date: "2024-01-12",
-        comment: "Qualidade impecável e bordado perfeito. Vale cada centavo!",
+        comment: "Acabamento impecável e espaço perfeito para fotos e anotações.",
       },
     ],
   },
   {
     id: 3,
-    slug: "toalhas-de-mesa",
-    title: "Toalhas de Mesa",
-    description: "Jogos americanos, trilhos e toalhas de mesa com bordados elegantes para suas refeições.",
-    longDescription: `Transforme suas refeições em momentos especiais com nossas toalhas de mesa
-    bordadas. Temos opções para todos os estilos, desde os mais clássicos até os contemporâneos.
+    slug: "toalhas-de-boca",
+    title: "Toalhas de Boca",
+    description: "Toalhinhas de boca para bebê, personalizadas com nome e bordados delicados.",
+    longDescription: `Nossas toalhas de boca são confeccionadas em algodão macio e hipoalergênico,
+    pensadas para o conforto e cuidado diário do bebê. Cada peça é bordada à mão com desenhos exclusivos
+    e pode ser personalizada com o nome da criança, tornando-se única e especial.
 
-    Cada peça é confeccionada com tecidos de alta qualidade que resistem a lavagens frequentes
-    sem perder a beleza do bordado. Perfeitas para uso diário ou para ocasiões especiais.`,
-    price: 12990,
+    São práticas para o dia a dia, ideais para acompanhar o bebê em qualquer momento,
+    além de serem um presente encantador e cheio de carinho.`,
+    price: 3800,
     image: "category-table",
-    category: "Mesa",
-    sizes: ["Jogo Americano (4 un)", "Trilho (40x150cm)", "Toalha Redonda (Ø180cm)", "Toalha Retangular (160x220cm)"],
-    tags: ["mesa", "decoração", "bordado", "jantar"],
-    sku: "MES-001",
+    category: "Bebê",
+    sizes: ["32x47cm"],
+    tags: ["bebê", "toalha de boca", "bordado", "personalizado", "presente"],
+    sku: "BEB-002",
     reviews: [
       {
         id: 1,
         author: "Patrícia Rocha",
         rating: 5,
         date: "2024-01-18",
-        comment: "Minha mesa nunca ficou tão bonita! Os bordados são um charme.",
+        comment: "As toalhinhas são delicadas e a personalização com o nome do meu filho ficou perfeita!",
       },
     ],
   },
   {
     id: 4,
-    slug: "jogo-de-cama",
-    title: "Jogo de Cama",
-    description: "Lençóis, fronhas e colchas com bordados sofisticados para um quarto dos sonhos.",
-    longDescription: `Durma com conforto e elegância com nossos jogos de cama bordados.
-    Confeccionados em percal 400 fios ou algodão egípcio, nossas peças oferecem
-    a combinação perfeita de suavidade e sofisticação.
+    slug: "guardanapos-de-cozinha",
+    title: "Guardanapos de Cozinha Bordados",
+    description: "Guardanapos de cozinha bordados, elegantes e personalizados para suas refeições.",
+    longDescription: `Transforme seus momentos à mesa com nossos guardanapos de cozinha bordados.
+    Confeccionados em tecido de alta qualidade, eles unem praticidade e sofisticação,
+    sendo ideais tanto para o dia a dia quanto para ocasiões especiais.
 
-    Personalize com monogramas, rendas ou bordados temáticos para criar um
-    ambiente único e acolhedor no seu quarto.`,
-    price: 29990,
+    Cada peça pode ser personalizada com monogramas, nomes ou desenhos temáticos,
+    trazendo exclusividade e charme para sua mesa.`,
+    price: 3200,
     image: "category-bedding",
-    category: "Quarto",
-    sizes: ["Solteiro", "Casal", "Queen", "King"],
-    tags: ["cama", "quarto", "bordado", "lençol"],
-    sku: "CAM-001",
+    category: "Cozinha",
+    sizes: ["44x74cm"],
+    tags: ["cozinha", "guardanapo", "bordado", "personalizado", "mesa posta"],
+    sku: "COZ-001",
     reviews: [
       {
         id: 1,
         author: "Roberto Santos",
         rating: 5,
         date: "2024-01-14",
-        comment: "Presente de aniversário de casamento perfeito. Minha esposa amou!",
+        comment: "Os guardanapos bordados deixaram minha mesa muito mais elegante.!",
       },
       {
         id: 2,
         author: "Luciana Ferreira",
         rating: 4,
         date: "2024-01-08",
-        comment: "Lindo e muito confortável. Só achei o prazo de entrega um pouco longo.",
+        comment: "Adorei a personalização com o nome da minha família. Ficaram lindos e sofisticados!",
       },
     ],
   },

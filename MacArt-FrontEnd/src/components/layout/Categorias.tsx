@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../styles/Categorias.css';
+import { Sparkles } from 'lucide-react';
 
 // Tipo para uma categoria
 interface Category {
@@ -20,13 +21,17 @@ function Categories({ categories }: CategoriesProps) {
       <div className="container">
         {/* Cabeçalho da seção */}
         <header className="categories-header">
+          <h3 className='heading-section categories-first'>
+            <Sparkles size={12} />
+            Nossas Especialidades
+          </h3>
           <h2 className="heading-section categories-title">
-            Nossos Produtos
+            Categorias de Produtos
           </h2>
           <div className="decorative-line"></div>
           <p className="text-body categories-description">
-            Cada peça é confeccionada com materiais de alta qualidade
-            e bordada à mão com todo o cuidado que você merece.
+            Cada peça é cuidadosamente criada com materiais de alta qualidade e muito carinho. 
+            Escolha a categoria e personalize como desejar.
           </p>
         </header>
 

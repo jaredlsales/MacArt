@@ -29,8 +29,8 @@ function ProductDetail() {
       useParams é um Hook do React Router que retorna
       os parâmetros dinâmicos da URL.
   
-      Se a rota é "/produto/:slug" e a URL é "/produto/toalhas-bordadas",
-      então slug será "toalhas-bordadas".
+      Se a rota é "/produto/:slug" e a URL é "/produto/fraldas-bordadas",
+      então slug será "fraldas-bordadas".
     */
     const { slug } = useParams<{ slug: string }>();
 

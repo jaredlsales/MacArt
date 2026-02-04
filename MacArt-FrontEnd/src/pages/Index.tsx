@@ -27,28 +27,28 @@ import gallery8 from '../assets/gallery-8.jpg.jpg';
 // Dados das categorias
 const categories = [
   {
-    title: 'Toalhas Bordadas',
-    description: 'Toalhas de banho e rosto com bordados personalizados.',
+    title: 'Fraldas Bordadas',
+    description: 'Fraldas bordadas com personalização exclusiva do nome da criança.',
     image: categoryTowels,
-    slug: 'toalhas-bordadas',
+    slug: 'fraldas-bordadas',
   },
   {
-    title: 'Enxoval de Bebê',
-    description: 'Conjuntos delicados para os pequenos.',
+    title: 'Livro Minhas recordações',
+    description: 'Livro personalizado para guardar todas as recordações.',
     image: categoryBaby,
-    slug: 'enxoval-de-bebe',
+    slug: 'livro-recordações',
   },
   {
-    title: 'Toalhas de Mesa',
-    description: 'Elegância para suas refeições.',
+    title: 'Toalhas de Boca',
+    description: 'Toalhinhas de boca para bebê.',
     image: categoryTable,
-    slug: 'toalhas-de-mesa',
+    slug: 'toalhas-de-boca',
   },
   {
-    title: 'Jogo de Cama',
-    description: 'Lençóis e fronhas sofisticados.',
+    title: 'Guardanapos de Cozinha Bordados',
+    description: 'Guardanapos de cozinha bordados, elegantes e personalizados para suas refeições.',
     image: categoryBedding,
-    slug: 'jogo-de-cama',
+    slug: 'guardanapos-de-cozinha',
   },
   {
     title: 'Panos de Prato',

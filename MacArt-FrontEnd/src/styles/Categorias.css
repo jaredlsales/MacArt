@@ -12,8 +12,39 @@
   margin-bottom: var(--spacing-3xl);
 }
 
+/* Usamos h3.categories-first para ganhar da regra global do H3 */
+h3.heading-section.categories-first {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  
+  /* Forçando o tamanho minúsculo */
+  font-size: 13px !important; 
+  
+  /* Estética de luxo da imagem */
+  letter-spacing: 0.18em !important; 
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  
+  /* Reset de margens que o H3 costuma ter */
+  margin: 0 0 0.75rem 0 !important;
+  color: var(--primary);
+  line-height: 1;
+}
+
+/* Ajuste do ícone Sparkles para acompanhar o texto */
+h3.categories-first svg {
+  width: 12px !important;
+  height: 12px !important;
+  flex-shrink: 0;
+}
+
+
 .categories-title {
   margin-bottom: var(--spacing-md);
+  margin-top: 20px;
+  font-size: x-large;
+  
 }
 
 .categories-description {

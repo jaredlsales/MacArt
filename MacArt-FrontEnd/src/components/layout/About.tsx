@@ -1,3 +1,4 @@
+import { Heart, Award, Users, Scissors } from "lucide-react";
 import '../../styles/About.css';
 
 interface AboutProps {
@@ -63,9 +64,6 @@ function About({ aboutImage }: AboutProps) {
             ))}
           </ul>
 
-          <a href="#contato" className="btn btn-primary">
-            Fale Conosco
-          </a>
         </div>
       </div>
     </section>

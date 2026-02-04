@@ -27,7 +27,7 @@ function Hero({ heroImage }: HeroProps) {
           </h1>
 
           <p className="hero-description">
-            Peças feitas à mão que transformam seus sonhos em arte. Toalhas bordadas, enxovais e lembranças únicas criadas especialmente para você.
+            Peças feitas à mão que transformam seus sonhos em arte. Fraldas Bordadas, enxovais e lembranças únicas criadas especialmente para você.
           </p>
 
           <div className="hero-buttons">
