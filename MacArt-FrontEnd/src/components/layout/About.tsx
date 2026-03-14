@@ -33,7 +33,7 @@ function About({ aboutImage }: AboutProps) {
           </h2>
 
           <p className="text-body about-text">
-            Há mais de 15 anos, a MacArt transforma tecidos em verdadeiras obras de arte.
+            Há mais de 20 anos, a MacArt transforma tecidos em verdadeiras obras de arte.
             Cada criação que nasce em nossas mãos carrega não apenas pontos e linhas, mas também histórias de amor, dedicação e a rica tradição do artesanato brasileiro.
           </p>
 

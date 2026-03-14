@@ -7,7 +7,7 @@ import { getProductBySlug, formatPrice, getAverageRating } from '../lib/Products
 import '../styles/product-detail.css';
 
 // Importando imagens
-import categoryTowels from '../assets/category-towels.jpg';
+import categoryTowels from '../assets/Avental_de_cozinha_01.jpeg';
 import categoryBaby from '../assets/category-baby.jpg';
 import categoryTable from '../assets/category-table.jpg';
 import categoryBedding from '../assets/category-bedding.jpg';
@@ -21,10 +21,216 @@ import gallery5 from '../assets/gallery-5.jpg.jpg';
 import gallery6 from '../assets/gallery-6.jpg.jpg';
 import gallery7 from '../assets/gallery-7.jpg.jpg';
 import gallery8 from '../assets/gallery-8.jpg.jpg';
+import aventalCozinha01 from '../assets/Avental_de_cozinha_01.jpeg';
+import aventalCozinha02 from '../assets/Avental_de_cozinha_02.jpeg';
+import aventalCozinha03 from '../assets/Avental_de_cozinha_03.jpeg';
+import aventalCozinha04 from '../assets/Avental_de_cozinha_04.jpeg';
+import aventalCozinha05 from '../assets/Avental_de_cozinha_05.jpeg';
+import aventalCozinha06 from '../assets/Avental_de_cozinha_06.jpeg';
+import aventalCozinha07 from '../assets/Avental_de_cozinha_07.jpeg';
+import aventalCozinha08 from '../assets/Avental_de_cozinha_08.jpeg';
+import aventalCozinha09 from '../assets/Avental_de_cozinha_09.jpeg';
+import aventalCozinha10 from '../assets/Avental_de_cozinha_10.jpeg';
+
+import aventalMasc from '../assets/Avental_de_cozinha_masculino_ 01.jpeg';
+import aventalMasc01 from '../assets/Avental_de_cozinha_masculino_ 01.jpeg';
+import aventalMasc02 from '../assets/Avental_de_cozinha_masculino_ 02.jpeg';
+import aventalMasc03 from '../assets/Avental_de_cozinha_masculino_ 03.jpeg';
+import aventalMasc04 from '../assets/Avental_de_cozinha_masculino_ 04.jpeg';
+import aventalMasc05 from '../assets/Avental_de_cozinha_masculino_ 05.jpeg';
+
+import capaVacina from '../assets/Capa_de_caderneta_de_vacinação_01.jpeg';
+import capaVacina01 from '../assets/Capa_de_caderneta_de_vacinação_01.jpeg';
+import capaVacina02 from '../assets/Capa_de_caderneta_de_vacinação_02.jpeg';
+import capaVacina03 from '../assets/Capa_de_caderneta_de_vacinação_03.jpeg';
+import capaVacina04 from '../assets/Capa_de_caderneta_de_vacinação_04.jpeg';
+import capaVacina05 from '../assets/Capa_de_caderneta_de_vacinação_05.jpeg';
+
+import fraldinhaBoca from '../assets/Fraldinhas_de_boca_01.jpeg';
+import fraldinhaBoca01 from '../assets/Fraldinhas_de_boca_01.jpeg';
+import fraldinhaBoca02 from '../assets/Fraldinhas_de_boca_02.jpeg';
+import fraldinhaBoca03 from '../assets/Fraldinhas_de_boca_03.jpeg';
+
+import guardanapoBordado from '../assets/Guardanapos_bordados_01.jpeg';
+import guardanapoBordado01 from '../assets/Guardanapos_bordados_01.jpeg';
+import guardanapoBordado02 from '../assets/Guardanapos_bordados_02.jpeg';
+import guardanapoBordado03 from '../assets/Guardanapos_bordados_03.jpeg';
+import guardanapoBordado04 from '../assets/Guardanapos_bordados_04.jpeg';
+import guardanapoBordado05 from '../assets/Guardanapos_bordados_05.jpeg';
+
+import jogoFraldas from '../assets/Jogo_de_fraldas_01.jpeg';
+import jogoFraldas01 from '../assets/Jogo_de_fraldas_01.jpeg';
+import jogoFraldas02 from '../assets/Jogo_de_fraldas_02.jpeg';
+
+import kitCozinha from '../assets/kit_jogo_01.jpeg';
+import kitJogo01 from '../assets/kit_jogo_01.jpeg';
+import kitJogo02 from '../assets/kit_jogo_02.jpeg';
+
+import mantaMaternidade from '../assets/Manta_maternidade_01.jpeg';
+import mantaMaternidade01 from '../assets/Manta_maternidade_01.jpeg';
+import mantaMaternidade02 from '../assets/Manta_maternidade_02.jpeg';
+import mantaMaternidade03 from '../assets/Manta_maternidade_03.jpeg';
+import mantaMaternidade04 from '../assets/Manta_maternidade_04.jpeg';
+import mantaMaternidade05 from '../assets/Manta_maternidade_05.jpeg';
+import mantaMaternidade06 from '../assets/Manta_maternidade_06.jpeg';
+import mantaMaternidade07 from '../assets/Manta_maternidade_07.jpeg';
+
+import ninhoBerco from '../assets/Ninho_de_berço_01.jpeg';
+import ninhoBerco01 from '../assets/Ninho_de_berço_01.jpeg';
+import ninhoBerco02 from '../assets/Ninho_de_berço_02.jpeg';
+import ninhoBerco03 from '../assets/Ninho_de_berço_03.jpeg';
+import ninhoBerco04 from '../assets/Ninho_de_berço_04.jpeg';
+import ninhoBerco05 from '../assets/Ninho_de_berço_05.jpeg';
+
+import portaLembrancas from '../assets/Porta_minhas_lembranças_01.jpeg';
+import portaLembrancas01 from '../assets/Porta_minhas_lembranças_01.jpeg';
+import portaLembrancas02 from '../assets/Porta_minhas_lembranças_02.jpeg';
+import portaLembrancas03 from '../assets/Porta_minhas_lembranças_03.jpeg';
+import portaLembrancas04 from '../assets/Porta_minhas_lembranças_04.jpeg';
+import portaLembrancas05 from '../assets/Porta_minhas_lembranças_05.jpeg';
+
+import portaSaquinhos from '../assets/Porta_saquinho_maternidade_01.jpeg';
+import portaSaquinhos01 from '../assets/Porta_saquinho_maternidade_01.jpeg';
+import portaSaquinhos02 from '../assets/Porta_saquinho_maternidade_02.jpeg';
+import portaSaquinhos03 from '../assets/Porta_saquinho_maternidade_03.jpeg';
+
+import festaJunina from '../assets/Saias_e _vestido_de_festa_junina_01.jpeg';
+import festaJunina01 from '../assets/Saias_e _vestido_de_festa_junina_01.jpeg';
+import festaJunina02 from '../assets/Saias_e _vestido_de_festa_junina_02.jpeg';
+import festaJunina03 from '../assets/Saias_e _vestido_de_festa_junina_03.jpeg';
+import festaJunina04 from '../assets/Saias_e _vestido_de_festa_junina_04.jpeg';
+import festaJunina05 from '../assets/Saias_e _vestido_de_festa_junina_05.jpeg';
+import festaJunina06 from '../assets/Saias_e _vestido_de_festa_junina_06.jpeg';
+import festaJunina07 from '../assets/Saias_e _vestido_de_festa_junina_07.jpeg';
+import festaJunina08 from '../assets/Saias_e _vestido_de_festa_junina_08.jpeg';
+import festaJunina09 from '../assets/Saias_e _vestido_de_festa_junina_09.jpeg';
+import festaJunina10 from '../assets/Saias_e _vestido_de_festa_junina_10.jpeg';
+import festaJunina11 from '../assets/Saias_e _vestido_de_festa_junina_11.jpeg';
+import festaJunina12 from '../assets/Saias_e _vestido_de_festa_junina_12.jpeg';
+import festaJunina13 from '../assets/Saias_e _vestido_de_festa_junina_13.jpeg';
+import festaJunina14 from '../assets/Saias_e _vestido_de_festa_junina_14.jpeg';
+
+import toalhaBordada from '../assets/Toalha_de_rosto_e_banho_bordada_01.jpeg';
+import toalhaBordada01 from '../assets/Toalha_de_rosto_e_banho_bordada_01.jpeg';
+import toalhaBordada02 from '../assets/Toalha_de_rosto_e_banho_bordada_02.jpeg';
+import toalhaBordada03 from '../assets/Toalha_de_rosto_e_banho_bordada_03.jpeg';
+import toalhaBordada04 from '../assets/Toalha_de_rosto_e_banho_bordada_04.jpeg';
+
+import toalhaLavabo from '../assets/Toalhinha_personalizada_de_lavabo_01.jpeg';
+import toalhaLavabo01 from '../assets/Toalhinha_personalizada_de_lavabo_01.jpeg';
+import toalhaLavabo02 from '../assets/Toalhinha_personalizada_de_lavabo_02.jpeg';
+import toalhaLavabo03 from '../assets/Toalhinha_personalizada_de_lavabo_03.jpeg';
+
+import toucaCozinha from '../assets/Touca_de_cozinha_01.jpeg';
+import toucaCozinha01 from '../assets/Touca_de_cozinha_01.jpeg';
+import toucaCozinha02 from '../assets/Touca_de_cozinha_02.jpeg';
 
 // Mapa de imagens
 const imageMap: Record<string, string> = {
-    "category-towels": categoryTowels,
+    "avental-fem": categoryTowels,
+    "Avental_de_cozinha_01": aventalCozinha01,
+    "Avental_de_cozinha_02": aventalCozinha02,
+    "Avental_de_cozinha_03": aventalCozinha03,
+    "Avental_de_cozinha_04": aventalCozinha04,
+    "Avental_de_cozinha_05": aventalCozinha05,
+    "Avental_de_cozinha_06": aventalCozinha06,
+    "Avental_de_cozinha_07": aventalCozinha07,
+    "Avental_de_cozinha_08": aventalCozinha08,
+    "Avental_de_cozinha_09": aventalCozinha09,
+    "Avental_de_cozinha_10": aventalCozinha10,
+    
+    "avental-masc": aventalMasc,
+    "Avental_de_cozinha_masculino_ 01": aventalMasc01,
+    "Avental_de_cozinha_masculino_ 02": aventalMasc02,
+    "Avental_de_cozinha_masculino_ 03": aventalMasc03,
+    "Avental_de_cozinha_masculino_ 04": aventalMasc04,
+    "Avental_de_cozinha_masculino_ 05": aventalMasc05,
+
+    "capa-vacina": capaVacina,
+    "Capa_de_caderneta_de_vacinação_01": capaVacina01,
+    "Capa_de_caderneta_de_vacinação_02": capaVacina02,
+    "Capa_de_caderneta_de_vacinação_03": capaVacina03,
+    "Capa_de_caderneta_de_vacinação_04": capaVacina04,
+    "Capa_de_caderneta_de_vacinação_05": capaVacina05,
+
+    "fraldinha-boca": fraldinhaBoca,
+    "Fraldinhas_de_boca_01": fraldinhaBoca01,
+    "Fraldinhas_de_boca_02": fraldinhaBoca02,
+    "Fraldinhas_de_boca_03": fraldinhaBoca03,
+
+    "guardanapo-bordado": guardanapoBordado,
+    "Guardanapos_bordados_01": guardanapoBordado01,
+    "Guardanapos_bordados_02": guardanapoBordado02,
+    "Guardanapos_bordados_03": guardanapoBordado03,
+    "Guardanapos_bordados_04": guardanapoBordado04,
+    "Guardanapos_bordados_05": guardanapoBordado05,
+
+    "jogo-fraldas": jogoFraldas,
+    "Jogo_de_fraldas_01": jogoFraldas01,
+    "Jogo_de_fraldas_02": jogoFraldas02,
+
+    "kit-cozinha": kitCozinha,
+    "kit_jogo_01": kitJogo01,
+    "kit_jogo_02": kitJogo02,
+
+    "manta-maternidade": mantaMaternidade,
+    "Manta_maternidade_01": mantaMaternidade01,
+    "Manta_maternidade_02": mantaMaternidade02,
+    "Manta_maternidade_03": mantaMaternidade03,
+    "Manta_maternidade_04": mantaMaternidade04,
+    "Manta_maternidade_05": mantaMaternidade05,
+    "Manta_maternidade_06": mantaMaternidade06,
+    "Manta_maternidade_07": mantaMaternidade07,
+
+    "ninho-berco": ninhoBerco,
+    "Ninho_de_berço_01": ninhoBerco01,
+    "Ninho_de_berço_02": ninhoBerco02,
+    "Ninho_de_berço_03": ninhoBerco03,
+    "Ninho_de_berço_04": ninhoBerco04,
+    "Ninho_de_berço_05": ninhoBerco05,
+
+    "porta-lembrancas": portaLembrancas,
+    "Porta_minhas_lembranças_01": portaLembrancas01,
+    "Porta_minhas_lembranças_02": portaLembrancas02,
+    "Porta_minhas_lembranças_03": portaLembrancas03,
+    "Porta_minhas_lembranças_04": portaLembrancas04,
+    "Porta_minhas_lembranças_05": portaLembrancas05,
+
+    "porta-saquinhos": portaSaquinhos,
+    "Porta_saquinho_maternidade_01": portaSaquinhos01,
+    "Porta_saquinho_maternidade_02": portaSaquinhos02,
+    "Porta_saquinho_maternidade_03": portaSaquinhos03,
+
+    "festa-junina": festaJunina,
+    "Saias_e _vestido_de_festa_junina_01": festaJunina01,
+    "Saias_e _vestido_de_festa_junina_02": festaJunina02,
+    "Saias_e _vestido_de_festa_junina_03": festaJunina03,
+    "Saias_e _vestido_de_festa_junina_04": festaJunina04,
+    "Saias_e _vestido_de_festa_junina_05": festaJunina05,
+    "Saias_e _vestido_de_festa_junina_06": festaJunina06,
+    "Saias_e _vestido_de_festa_junina_07": festaJunina07,
+    "Saias_e _vestido_de_festa_junina_08": festaJunina08,
+    "Saias_e _vestido_de_festa_junina_09": festaJunina09,
+    "Saias_e _vestido_de_festa_junina_10": festaJunina10,
+    "Saias_e _vestido_de_festa_junina_11": festaJunina11,
+    "Saias_e _vestido_de_festa_junina_12": festaJunina12,
+    "Saias_e _vestido_de_festa_junina_13": festaJunina13,
+    "Saias_e _vestido_de_festa_junina_14": festaJunina14,
+
+    "toalha-bordada": toalhaBordada,
+    "Toalha_de_rosto_e_banho_bordada_01": toalhaBordada01,
+    "Toalha_de_rosto_e_banho_bordada_02": toalhaBordada02,
+    "Toalha_de_rosto_e_banho_bordada_03": toalhaBordada03,
+    "Toalha_de_rosto_e_banho_bordada_04": toalhaBordada04,
+
+    "toalha-lavabo": toalhaLavabo,
+    "Toalhinha_personalizada_de_lavabo_01": toalhaLavabo01,
+    "Toalhinha_personalizada_de_lavabo_02": toalhaLavabo02,
+    "Toalhinha_personalizada_de_lavabo_03": toalhaLavabo03,
+
+    "touca-cozinha": toucaCozinha,
+    "Touca_de_cozinha_01": toucaCozinha01,
+    "Touca_de_cozinha_02": toucaCozinha02,
     "category-baby": categoryBaby,
     "category-table": categoryTable,
     "category-bedding": categoryBedding,
@@ -45,8 +251,8 @@ function ProductDetail() {
       useParams é um Hook do React Router que retorna
       os parâmetros dinâmicos da URL.
   
-      Se a rota é "/produto/:slug" e a URL é "/produto/fraldas-bordadas",
-      então slug será "fraldas-bordadas".
+      Se a rota é "/produto/:slug" e a URL é "/produto/avental-cozinha-feminino",
+      então slug será "avental-cozinha-feminino".
     */
     const { slug } = useParams<{ slug: string }>();
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { products } from '../../lib/Products';
 import '../../styles/OrderForm.css';
 
 /*
@@ -25,21 +26,6 @@ function OrderForm() {
     message: '',
   });
 
-  // Estado para controlar se o formulário foi enviado
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // Estado para controlar se está enviando
-  const [isLoading, setIsLoading] = useState(false);
-
-  /*
-    Função que atualiza o estado quando o usuário digita.
-
-    e.target.name = nome do campo (ex: "email")
-    e.target.value = valor digitado (ex: "joao@email.com")
-
-    Usamos spread operator (...) para copiar o objeto
-    e atualizar apenas o campo que mudou.
-  */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -49,36 +35,6 @@ function OrderForm() {
       ...prev,        // Copia todos os campos atuais
       [name]: value,  // Atualiza apenas o campo que mudou
     }));
-  };
-
-  /*
-    Função que é chamada quando o formulário é enviado.
-
-    e.preventDefault() impede o comportamento padrão
-    (que seria recarregar a página).
-  */
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    setIsLoading(true);
-
-    // Simula um envio (em um projeto real, você faria uma requisição)
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setIsLoading(false);
-    setIsSubmitted(true);
-
-    // Limpa o formulário
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      product: '',
-      message: '',
-    });
-
-    // Após 5 segundos, volta ao formulário
-    setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   // Dados de contato
@@ -143,124 +99,107 @@ function OrderForm() {
 
         {/* Lado direito - Formulário */}
         <div className="order-form-card animate-fade-up delay-200">
-          {isSubmitted ? (
-            // Mensagem de sucesso
-            <div className="order-form-success">
-              <div className="order-form-success-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-              </div>
-              <h3 className="order-form-success-title">
-                Mensagem Enviada!
-              </h3>
-              <p className="order-form-success-text">
-                Entraremos em contato em breve.
-              </p>
+          {/* O formulário usa FormSubmit para enviar o email diretamente sem backend */}
+          <form className="order-form" action="https://formsubmit.co/ester.las7@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="Novo contato do site MacArt!" />
+            {/* Nome */}
+            <div className="form-group">
+              <label className="label" htmlFor="name">
+                Nome Completo *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="input"
+                placeholder="Seu nome"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
             </div>
-          ) : (
-            // Formulário
-            <form className="order-form" onSubmit={handleSubmit}>
-              {/* Nome */}
+
+            {/* Email e Telefone lado a lado */}
+            <div className="order-form-row">
               <div className="form-group">
-                <label className="label" htmlFor="name">
-                  Nome Completo *
+                <label className="label" htmlFor="email">
+                  E-mail *
                 </label>
                 <input
-                  type="text"
-                  id="name"
-                  name="name"
+                  type="email"
+                  id="email"
+                  name="email"
                   className="input"
-                  placeholder="Seu nome"
-                  value={formData.name}
+                  placeholder="Seu email"
+                  value={formData.email}
                   onChange={handleChange}
                   required
                 />
               </div>
 
-              {/* Email e Telefone lado a lado */}
-              <div className="order-form-row">
-                <div className="form-group">
-                  <label className="label" htmlFor="email">
-                    E-mail *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="input"
-                    placeholder="ester.las7@gmail.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="label" htmlFor="phone">
-                    WhatsApp
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="input"
-                    placeholder="(00) 00000-0000"
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-
-              {/* Produto */}
               <div className="form-group">
-                <label className="label" htmlFor="product">
-                  Produto de Interesse
+                <label className="label" htmlFor="phone">
+                  WhatsApp
                 </label>
-                <select
-                  id="product"
-                  name="product"
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
                   className="input"
-                  value={formData.product}
+                  placeholder="(00) 00000-0000"
+                  value={formData.phone}
                   onChange={handleChange}
-                >
-                  <option value="">Selecione uma opção</option>
-                  <option value="fraldas">Fraldas Bordadas</option>
-                  <option value="decoração">Livro Minhas recordações</option>
-                  <option value="toalhas">Toalhas de Boca</option>
-                  <option value="cozinha">Guardanapos de Cozinha Bordados</option>
-                  <option value="panos">Panos de Prato</option>
-                  <option value="roupoes">Roupões</option>
-                  <option value="outro">Outro</option>
-                </select>
-              </div>
-
-              {/* Mensagem */}
-              <div className="form-group">
-                <label className="label" htmlFor="message">
-                  Sua Mensagem *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="input textarea"
-                  placeholder="Descreva o que você está buscando..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
                 />
               </div>
+            </div>
 
-              {/* Botão de envio */}
-              <button
-                type="submit"
-                className="btn btn-primary"
-                disabled={isLoading}
+            {/* Produto */}
+            <div className="form-group">
+              <label className="label" htmlFor="product">
+                Produto de Interesse
+              </label>
+              <select
+                id="product"
+                name="product"
+                className="input"
+                value={formData.product}
+                onChange={handleChange}
               >
-                {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
-              </button>
-            </form>
-          )}
+                <option value="">Selecione uma opção</option>
+                {products.map((product) => (
+                  <option key={product.id} value={product.title}>
+                    {product.title}
+                  </option>
+                ))}
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+
+            {/* Mensagem */}
+            <div className="form-group">
+              <label className="label" htmlFor="message">
+                Sua Mensagem *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                className="input textarea"
+                placeholder="Descreva o que você está buscando..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            {/* Botão de envio */}
+            <button
+              type="submit"
+              className="btn btn-primary"
+            >
+              Enviar Mensagem
+            </button>
+          </form>
         </div>
       </div>
     </section>

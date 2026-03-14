@@ -1,13 +1,82 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>macart</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/needle.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MacArt </title>
+  <meta name="title" content="MacArt" />
+  <meta name="description"
+    content="MacArt por Ester de Sales. Artesanato com amor, bordados que contam histórias. Cada peça é única, feita especialmente para você." />
+  <meta name="keywords" content="MacArt, Ester de Sales, Artesanato, Costura Criativa, Bordados, Macatuba" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="msapplication-navbutton-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <!-- Altere a URL abaixo para o domínio final do site -->
+  <meta property="og:url" content="/" />
+  <meta property="og:title" content="MacArt" />
+  <meta property="og:description"
+    content="Peças artesanais únicas. Artesanato com amor, bordados que contam histórias. Conheça o portfólio e as criações da Ester." />
+  <!-- OG Image recomendada que seja URL Absoluta (ex: https://seudominio.com.br/needle.png) -->
+  <meta property="og:image" content="https://macart-ester.com.br/needle.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Preview do ateliê MacArt" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="/" />
+  <meta name="twitter:title" content="MacArt" />
+  <meta name="twitter:description"
+    content="Peças artesanais únicas. Artesanato com amor, bordados que contam histórias. Conheça o portfólio e as criações da Ester." />
+  <meta name="twitter:image" content="https://macart-ester.com.br/needle.png" />
+  <meta name="twitter:image:alt" content="Preview do ateliê MacArt" />
+
+  <!-- Preload external animations for faster loading -->
+  <link rel="dns-prefetch" href="https://macart.devjaredsales.com" />
+  <link rel="preconnect" href="https://macart.devjaredsales.com" />
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Início",
+          "url": "/#inicio"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Produtos",
+          "url": "/#produtos"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Sobre",
+          "url": "/#sobre"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Contato",
+          "url": "/#contato"
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

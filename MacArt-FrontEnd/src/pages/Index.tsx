@@ -6,68 +6,66 @@ import Gallery from '../components/layout/Gallery';
 import OrderForm from '../components/layout/OrderForm';
 import Footer from '../components/layout/Footer';
 
+// Import Produtos
+import { products } from '../lib/Products';
+
 // Importando imagens
 import heroImage from '../assets/hero-macart.jpeg';
-import aboutImage from '../assets/about-artisan.jpg';
-import categoryTowels from '../assets/category-towels.jpg';
-import categoryBaby from '../assets/category-baby.jpg';
-import categoryTable from '../assets/category-table.jpg';
-import categoryBedding from '../assets/category-bedding.jpg';
-import categoryKitchen from '../assets/category-kitchen.jpg';
-import categoryRobes from '../assets/category-robes.jpg';
-import gallery1 from '../assets/gallery-1.jpg.jpg';
-import gallery2 from '../assets/gallery-2.jpg.jpg';
-import gallery3 from '../assets/gallery-3.jpg.jpg';
-import gallery4 from '../assets/gallery-4.jpg.jpg';
-import gallery5 from '../assets/gallery-5.jpg.jpg';
-import gallery6 from '../assets/gallery-6.jpg.jpg';
-import gallery7 from '../assets/gallery-7.jpg.jpg';
-import gallery8 from '../assets/gallery-8.jpg.jpg';
+import aboutImage from '../assets/Ester_foto_perfil.jpeg';
+import categoryTowels from '../assets/Avental_de_cozinha_01.jpeg';
+import gallery1 from '../assets/Avental_de_cozinha_02.jpeg';
+import galleryNew1 from '../assets/Fraldinhas_de_boca_02.jpeg';
+import galleryNew2 from '../assets/Guardanapos_bordados_02.jpeg';
+import galleryNew3 from '../assets/Manta_maternidade_02.jpeg';
 
-// Dados das categorias
-const categories = [
-  {
-    title: 'Fraldas Bordadas',
-    description: 'Fraldas bordadas com personalização exclusiva do nome da criança.',
-    image: categoryTowels,
-    slug: 'fraldas-bordadas',
-  },
-  {
-    title: 'Livro Minhas recordações',
-    description: 'Livro personalizado para guardar todas as recordações.',
-    image: categoryBaby,
-    slug: 'livro-recordações',
-  },
-  {
-    title: 'Toalhas de Boca',
-    description: 'Toalhinhas de boca para bebê.',
-    image: categoryTable,
-    slug: 'toalhas-de-boca',
-  },
-  {
-    title: 'Guardanapos de Cozinha Bordados',
-    description: 'Guardanapos de cozinha bordados, elegantes e personalizados para suas refeições.',
-    image: categoryBedding,
-    slug: 'guardanapos-de-cozinha',
-  },
-  {
-    title: 'Panos de Prato',
-    description: 'Decorativos para sua cozinha.',
-    image: categoryKitchen,
-    slug: 'panos-de-prato',
-  },
-  {
-    title: 'Roupões',
-    description: 'Conforto com monogramas bordados.',
-    image: categoryRobes,
-    slug: 'roupoes-personalizados',
-  },
-];
+import aventalMasc from '../assets/Avental_de_cozinha_masculino_ 01.jpeg';
+import mantaMaternidade from '../assets/Manta_maternidade_01.jpeg';
+import saiCaipira from '../assets/Saias_e _vestido_de_festa_junina_01.jpeg';
+import ninhoBerco from '../assets/Ninho_de_berço_01.jpeg';
+import portaLembrancas from '../assets/Porta_minhas_lembranças_01.jpeg';
+
+import gal1 from '../assets/Capa_de_caderneta_de_vacinação_01.jpeg';
+import gal2 from '../assets/Fraldinhas_de_boca_01.jpeg';
+import gal3 from '../assets/Guardanapos_bordados_01.jpeg';
+import gal4 from '../assets/Jogo_de_fraldas_01.jpeg';
+import gal5 from '../assets/kit_jogo_01.jpeg';
+import gal6 from '../assets/Porta_saquinho_maternidade_01.jpeg';
+import gal7 from '../assets/Toalha_de_rosto_e_banho_bordada_01.jpeg';
+import gal8 from '../assets/Touca_de_cozinha_01.jpeg';
+import toalhinhaPersonalizada from '../assets/Toalhinha_personalizada_de_lavabo_01.jpeg';
+
+// Mapeamento de imagens para as categorias (slug -> image import)
+const categoryImageMap: Record<string, string> = {
+  'avental-cozinha-feminino': categoryTowels,
+  'avental-cozinha-masculino': aventalMasc,
+  'capa-caderneta-vacinacao': gal1,
+  'fraldinhas-de-boca': gal2,
+  'guardanapos-bordados': gal3,
+  'jogo-de-fraldas': gal4,
+  'kit-jogo-americano-puxa-saco': gal5,
+  'manta-maternidade': mantaMaternidade,
+  'ninho-de-berco': ninhoBerco,
+  'porta-lembrancinhas': portaLembrancas,
+  'porta-saquinhos-maternidade': gal6,
+  'saias-e-vestidos-festa-junina': saiCaipira,
+  'toalha-rosto-banho-bordada': gal7,
+  'toalhinha-personalizada-lavabo': toalhinhaPersonalizada,
+  'touca-cozinha': gal8
+};
+
+// Gerar as categorias dinamicamente a partir dos produtos
+const categories = products.map(product => ({
+  title: product.title,
+  description: product.description,
+  image: categoryImageMap[product.slug] || categoryTowels, // Imagem fallback
+  slug: product.slug,
+}));
 
 // Imagens da galeria
 const galleryImages = [
-  gallery1, gallery2, gallery3, gallery4,
-  gallery5, gallery6, gallery7, gallery8,
+  gallery1, gal1, gal2, gal3,
+  gal4, gal5, gal6, gal7, gal8,
+  galleryNew1, galleryNew2, galleryNew3
 ];
 
 function Index() {
